@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+	<title>04</title>
+</head>
+<body>
+<div id="app">
+	<ul>
+		<li v-for="pref in prefs"><!--配列のv-forで繰り返し表示 変数名in配列名で指定すると配列の一つ一つを変数名の中に入れていくという指示になる-->
+			{{ pref.name }}
+		</li>
+	</ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+	var app = new Vue({
+		el: "#app",
+		data: {
+			 prefs: [
+                 { name:"北海道" },
+                 { name:"青森" },
+                 { name:"香川" }
+			 ]
+		}
+	});
+</script>
+</body>
+</html>

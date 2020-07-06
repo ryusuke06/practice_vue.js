@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf8">
 	<title>01</title>
 </head>
 <body>
-
-
+	<div id="app">
+		<p v-if="error">エラーです</p><!-- v-ifのようなvueの属性のことをディレクティブと呼ぶ -->
+	</div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script>
-  var app = new Vue({
-  	
-  })
+	var app = new Vue({
+		el: "#app", //appをid名だと宣言して、その要素に対してスクリプトを適応
+		data: {
+			error: true //値がtrueの時はエラーですと表示、falseの場合はp要素をコメントアウト
+		}
+	});
 </script>
 </body>
 </html>

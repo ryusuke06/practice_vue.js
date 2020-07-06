@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>03</title>
+	<meta charset="utf8">
+</head>
+<body>
+
+<div id="app"> <!--class属性だとダメ-->
+	<p>{{ now }}</p>
+	<button v-on:click="time">時刻を表示する</button><!--v-onディレクティブ、クリックした時にtimeというメソッドを動作-->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+  var app = new Vue({
+  	el: "#app",
+  	data: {
+  		now: "00:00:00"
+  	},
+  	methods: {
+  		time: function(e) { //eというパラメータがくるのでそれを受け取る
+  			var date = new Date();
+  			this.now = date.getHours() + ":"//メソッドで値を代入したいときはthis.(変数名)
+  			+ date.getMinutes() + ":"
+  			+ date.getSeconds();
+  		}
+  	}
+  });
+</script>
+</body>
+</html>
