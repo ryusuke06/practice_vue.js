@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+	<title>07</title>
+</head>
+<body>
+	<div id="app">
+		<ol v-html="messages"></ol><!--　今までの{{}}による値の表示ではHTMLのタグとして出力できない（02でv-bindをやったように）-->
+	</div>
+	<hr>
+	<input type="text" oninput="doInput(event);"><!-- 入力したらdoInput関数を発火-->
+	<button onclick="doAction();">
+		click
+	</button>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+	Vue.config.devtools = true;
+	var data = {
+		messages: "<li>Hello Vue!</li>"
+	};
+
+	var app = new Vue({
+		el: "#app",
+		data: data
+	});
+
+	function doInput(event) {
+		data.message = event.target.value;//イベントで入力した値をmessageに代入
+	}
+
+	function doAction() {
+		data.messages += "<li>" + data.message + "</li>"//代入した値をmessages追加して保存
+	}
+</script>
+</body>
+</html>

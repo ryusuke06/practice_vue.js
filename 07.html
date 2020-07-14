@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+	<title>07</title>
+</head>
+<body>
+	<div id="app">
+		{{message}}
+	</div>
+	<hr>
+	<button onclick="doAction();">
+		click
+	</button>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+	Vue.config.devtools = true;
+	var data ={
+		message: "Hello Vue!"
+	};
+	var app = new Vue({
+		el: "#app", //appをid名だと宣言（CSSセレクタ）して、そのエレメント（要素）に対してスクリプトを適応
+		data: data,
+		render: (element)=>{ //render{ function(引数){処理} }と同じ、ただアロー関数だと文量が少なくて済む。elementは関数（JSでは関数はオブジェクトとしても扱える）
+			return element("p", {"style": "font-size:20pt; color:red;"}, data.message); /*ここでのelementは　VNode（仮想ノード）というオブジェクト（vue独自）。仮想DOMというもので扱う（タグの表示や属性を変更する仕組み）
+			関数(タグ, 属性, 表示内容)を書く*/
+		}
+	})
+	function doAction() {
+		data.message = "Your clicked!"
+	}
+</script>
+</body>
+</html>
