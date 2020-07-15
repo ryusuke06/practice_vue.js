@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>11</title>
+	<meta charset="utf8">
+</head>
+<body>
+
+<div id="app">
+	<p>※データをテーブル表示する</p>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>name</th>
+      <th>mail</th>
+      <th>tel</th>
+    </tr>
+    <tr v-for="(item, index) in items" v-if="index % 2 == 0">
+      <td>{{index}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.mail}}</td>
+      <td>{{item.tel}}</td>
+    </tr>
+    <tr v-else>
+      <td>***</td>
+      <td>***非公開***</td>
+      <td>***非公開***</td>
+      <td>***非公開***</td>
+    </tr>
+  </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+  Vue.config.devtools = true;
+  var data = {
+    items: [
+    {name:"Taro", mail:"taro@yamada", tel:"000-999"},
+    {name:"Hanako", mail:"hanako@yamada", tel:"111-999"},
+    {name:"Sachiko", mail:"sachiko@yamada", tel:"222-999"},
+    {name:"Jiro", mail:"jiro@yamada", tel:"333-999"}
+    ]
+  }
+
+  var app = new Vue({
+    el: "#app",
+    data: data
+  });
+</script>
+</body>
+</html>

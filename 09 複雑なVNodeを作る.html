@@ -28,7 +28,7 @@
 			var p = element("p",
 				{style: "font-size: 20pt;"},
 				data.message);
-			var li = data.items.map(item=> element("li", item));//itemsはliタグの要素はitemを配列で代入
+			var li = data.items.map(item=> element("li", item));//itemsはliタグの要素はitemを配列で代入。mapメソッドはmap( 引数=>新たな値 )とアロー関数で書く。
 			var ol = element("ol", li);
 			var div = element("div", [p, ol]);
 			return div;
