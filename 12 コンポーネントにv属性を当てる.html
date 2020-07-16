@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+	<title>12</title>
+</head>
+
+<body>
+	<div id="app">
+		<hello v-for="item in data" v-bind:name="item" />
+		<!-- propsプロパティで属性として扱っているnameの値をitemと定義 -->
+	</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    Vue.config.devtools = true;
+	var hello = Vue.component("hello", {
+		props: ['name'],
+		template: `
+		<p class="hello">Hello, {{name}}!</p>
+		`,/*props:[名前1, 名前2,...]これでそれぞれの名前をタグに属性として記述できる。
+		    props:{ 名前1:タイプ,... }タイプ（String,Number,Boolean,Array,Object）を指定する場合は配列ではなくオブジェクトとして記述。*/
+	})
+
+	var app = new Vue({
+		el: "#app",
+		data:{
+			data: ['Taro', 'Hanako', 'Sachiko', 'Jiro']
+		}
+	});
+</script>
+</body>
+</html>

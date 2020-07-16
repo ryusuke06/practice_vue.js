@@ -15,12 +15,14 @@
       <th>mail</th>
       <th>tel</th>
     </tr>
+    <!-- 先ず全データを繰り返し表示される => v-forディレクティブが優先されている -->
     <tr v-for="(item, index) in items" v-if="index % 2 == 0">
       <td>{{index}}</td>
       <td>{{item.name}}</td>
       <td>{{item.mail}}</td>
       <td>{{item.tel}}</td>
     </tr>
+    <!-- v-forより後ろにあってもv-ifとは同じタグ内なのでv-elseも繰り返しの中でチェックされる -->
     <tr v-else>
       <td>***</td>
       <td>***非公開***</td>

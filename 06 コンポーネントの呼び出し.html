@@ -26,7 +26,8 @@
 			<strong>Error!</strong>
 			<slot></slot>
 		</div>
-		`,//シングルクォーテーションではない
+		`,/*シングルクォーテーションではない
+		    複雑なテンプレートでも必ずベースのタグの中で完結させる*/
 		methods: {
 			caution: function() {
 				alert("クリックされました");

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+	<title>13</title>
+</head>
+
+<body>
+	<div id="app">
+		<div><hello v-bind:name="name" /></div>
+		<div><input type="text" v-model="name"></div>
+		<!-- v-modelはinputで入力された値をdataプロパティにバインドする -->
+	</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    Vue.config.devtools = true;
+	var hello = Vue.component("hello", {
+		props: ['name'],
+		template: `
+		<p class="hello">Hello, {{name}}!</p>
+		`,
+	});
+
+	var app = new Vue({
+		el: "#app",
+		data:{
+			name: 'no-name'
+		}
+	});
+</script>
+</body>
+</html>
