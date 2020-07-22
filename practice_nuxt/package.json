@@ -1,0 +1,24 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "HOST=0.0.0.0 PORT=3000 nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "export": "nuxt export",
+    "serve": "nuxt serve"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.0",
+    "@nuxtjs/proxy": "^2.0.0",
+    "loaders.css": "^0.1.2",
+    "nuxt": "^2.13.0",
+    "vue-draggable": "^2.0.6",
+    "vuedraggable": "^2.24.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.11.2",
+    "material-design-icons-iconfont": "^5.0.1"
+  }
+}
