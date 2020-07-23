@@ -4,3 +4,4 @@
 
 - Todolistを作った
 - storeで処理をしてみた
+- axiosを使ってjsonファイルの受け取りとその処理してみた
