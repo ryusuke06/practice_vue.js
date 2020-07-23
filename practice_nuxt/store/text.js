@@ -1,5 +1,7 @@
 import Vuex from 'vuex'
 //Vuexオブジェクトをインポート
+import createPersistedState from "vuex-persistedstate";
+//リロードしても値をローカルストレージに保存
 
 const createStore = () => {
 	return new Vuex.Store({
@@ -49,6 +51,9 @@ const createStore = () => {
 				context.commit('say', 'add ' + n + 1)
 			}
 		},
+		plugins: {
+			createPeersistedState()
+		},//これだけでstateに用意された値は全てローカルストレージに保存
 	})
 }
 
