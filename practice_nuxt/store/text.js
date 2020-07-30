@@ -23,7 +23,7 @@ const createStore = () => {
 			};
 		},
 		mutations: {
-			/* 名前:function(変数,第一引数,...){...}で定義（引数の定義は必要によって）
+			/* 名前:function(変数,第一引数,...){...}で定義（引数の定義は必要によって）（ちなみにここでの引数をペイロードという）
 			   @click = $store.commit(名前, 引数)などでイベント発火して処理を呼び出し（@ = v-on:のこと） */
 			count: function(state, n) {
 				state.counter += n;
@@ -51,9 +51,9 @@ const createStore = () => {
 				context.commit('say', 'add ' + n + 1)
 			}
 		},
-		plugins: {
-			createPeersistedState()
-		},//これだけでstateに用意された値は全てローカルストレージに保存
+		plugins: [
+			createPersistedState(),
+		],//これだけでstateに用意された値は全てローカルストレージに保存
 	})
 }
 

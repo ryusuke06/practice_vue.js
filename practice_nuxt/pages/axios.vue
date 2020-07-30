@@ -25,9 +25,9 @@
 </template>
 
 <script>
-const axios = require('axios');
+const axios = require('axios');//axiosオブジェクトを定数として呼び出し
 
-let url = "https://jsonplaceholder.typicode.com/posts/";//jsonデータを練習で取り出せる
+let url = "https://jsonplaceholder.typicode.com/posts/";//jsonデータを練習で取り出せるページ
 
 export default {
 	data: function(){
@@ -40,13 +40,13 @@ export default {
 	},
 	methods: {
 		doClick:function(event) {
-			/*axios.get(アドレス).then((res)=>{アクセス後の処理})
+			/*axios.get(アドレス).then((res)=>{アクセス後の処理}) ちなみにresはgetメソッドの返り値をそのまま引数にしてる。あとresと名付けなければならないわけではない
 			非同期でデータを取ってきて処理する場合thenの後に書いておかないとアクセスが完了してないのに処理しようとしてエラーになる可能性がある*/
 			axios.get(url + this.msg).then((res) => {
 				this.message = 'get ID=' + this.msg;
 				this.json_data = res.data;
 			}).catch((error) => {
-			//catchメソッドを繋ぐとサーバーがエラーで開けなかったときの逃げ道になる
+			//catchメソッドは例外処理のこと！
 				this.message = 'ERROR';
 				this.json_data = {};
 			});
