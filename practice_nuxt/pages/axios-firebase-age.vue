@@ -15,7 +15,11 @@
 const axios = require('axios');
 
 let url = "https://ryu-nuxt.firebaseio.com/person.json?orderBy=%22age%22";
-
+/* ~/person.json?orderBy="age"&startAt=開始数&endAt=終了数
+   クエリテキストの部分に３つの項目がある。
+   orderBy="age" 並び替えに使う項目指定（今回はage）
+   startAt=開始数 指定した値より大きいものを取り出す
+   endAt=終了数 指定した値以前のものを取り出す */
 export default {
 	data: function(){
 		return{
